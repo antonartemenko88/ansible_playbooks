@@ -1,0 +1,25 @@
+---
+  - name: Check server stats 
+    hosts: all
+    tasks:   
+      - name: check memory 
+        command: free -m
+        register: free_output
+
+      - name: Print Output of Check memory
+        debug: 
+          var: free_output
+
+      - name: Check disc
+        command: df -h
+        register: disk_output  
+
+      - name: Print Status of check memory
+        debug: 
+          var: disk_output
+
+       
+       
+
+    
+            
